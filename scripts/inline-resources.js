@@ -127,8 +127,8 @@ function fixPackageManifest(distPath) {
 
   return readFile(pkgManifestPath, 'utf-8')
     .then(content => content.replace(/dist\/ng2-md-datatable\/ng2-md-datatable\.umd\.js/, './ng2-md-datatable.umd.js'))
-    .then(content => content.replace(/dist\/ng2-md-datatable\/index\.js/, './index.js'))
-    .then(content => content.replace(/dist\/ng2-md-datatable\/index\.d\.ts/, './index.d.ts'))
+    .then(content => content.replace(/dist\/ng2-md-datatable\/ng2-md-datatable\.js/, './ng2-md-datatable.js'))
+    .then(content => content.replace(/dist\/ng2-md-datatable\/ng2-md-datatable\.d\.ts/, './ng2-md-datatable.d.ts'))
     .then(content => writeFile(pkgManifestPath, content));
 }
 

@@ -11,7 +11,7 @@
 import { MdSelectChange } from '@angular/material';
 
 import { BaseComponent } from './helpers';
-import { IDatatablePaginationEvent } from './md-datatable.interfaces';
+import { IDatatablePaginationEvent } from './md-datatable.events';
 
 @Component({
   selector: 'ng2-md-datatable-pagination',

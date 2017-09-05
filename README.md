@@ -4,11 +4,9 @@
 [![CircleCI](https://circleci.com/gh/fredguile/ng2-md-datatable.svg?style=svg)](https://circleci.com/gh/fredguile/ng2-md-datatable)
 [![downloads](https://img.shields.io/npm/dm/ng2-md-datatable.svg)]()
 
-[Angular 2](https://github.com/angular/angular) with [Material 2](https://github.com/angular/material2) is awesome, but it's still lacking a `DataTable` component (as of November 2016).
+[Angular 2](https://github.com/angular/angular) with [Material 2](https://github.com/angular/material2) is awesome, but it's still lacking a `DataTable` component (as of November 2016). As I urgently needed one for a project, I decided to make my own `DataTable` component and share it on GitHub.
 
-As I urgently needed one for a project, I decided to make my own `DataTable` component and share it on GitHub.
-
-This may be useful for you (or not).
+**Update Q2 2017** There's now an official DataTable component, and it looks neat! Still, not 100% sure when I'll dig into it (the most interesting part is probably @angular/cdk). In the meantime I'll keep maintaining this one, of course it still makes sense to use this "dumb" DataTable if you wanna wait that documentation is finished regarding @angular/cdk.
 
 ## Features
 - Pagination Component
@@ -120,17 +118,14 @@ To add `ng2-md-datatable` to your Material 2 theming file:
 @include mat-datatable-theme($theme);
 ```
 
-This is based on the [current guide](https://github.com/angular/material2/blob/master/guides/theming.md) for theming components with Material 2 Beta 3.
+This is based on the [current guide](https://github.com/angular/material2/blob/master/guides/theming.md) for theming components with Material 2 Beta 3 or later.
 
 ## Live Demo
 
 To see `ng2-md-datatable` in action (head to `/src/demo-app`), a few steps are required:
 
-- you need Gulp (`npm install -g gulp-cli`)
-- you need `Angular-CLI` v1.0 or later (`npm install -g @angular/cli`)
-- the demo-app currently uses the compiled library, so please run beforehand:
-  * `gulp build:components` (or `gulp build:release` depending on if you plan to use AOT or not)
+- the demo-app currently uses the compiled library, so please run `npm run build` beforehand
 - from the `demo-app` folder, run `npm install` (this will copy the binaries from the `/dist` folder in `nodes_modules`)
-- then start `ng serve` or `ng serve --aot`
+- then start `npx ng serve` or `npx ng serve --aot`
 
 Don't mind about the use of Observables here (and about the Shuffle button), I just wanted to test if the datatable behaved correctly with Angular async rendering.

@@ -2,7 +2,7 @@ import { task, watch } from 'gulp';
 import * as path from 'path';
 
 import { DIST_COMPONENTS_ROOT, PROJECT_ROOT, COMPONENTS_DIR } from '../constants';
-import { sassBuildTask, tsBuildTask, execNodeTask, copyTask, sequenceTask } from '../task_helpers';
+import { sassBuildTask, ngcBuildTask, execNodeTask, copyTask, sequenceTask } from '../task_helpers';
 import { writeFileSync } from 'fs';
 
 // No typings for these.
@@ -32,10 +32,10 @@ task(':watch:components:spec', () => {
 });
 
 /** Builds component typescript only (ESM output). */
-task(':build:components:ts', tsBuildTask(COMPONENTS_DIR, 'tsconfig-srcs.json'));
+task(':build:components:ts', ngcBuildTask(COMPONENTS_DIR, 'tsconfig-srcs.json'));
 
 /** Builds components typescript for tests (CJS output). */
-task(':build:components:spec', tsBuildTask(COMPONENTS_DIR, 'tsconfig.json'));
+task(':build:components:spec', ngcBuildTask(COMPONENTS_DIR, 'tsconfig.json'));
 
 /** Copies assets (html, markdown) to build output. */
 task(':build:components:assets', copyTask([
@@ -90,7 +90,7 @@ task(':build:components:rollup', [':build:components:inline'], () => {
 
   // Rollup the UMD bundle from all ES5 + imports JavaScript files built.
   return rollup({
-    entry: path.join(DIST_COMPONENTS_ROOT, 'index.js'),
+    entry: path.join(DIST_COMPONENTS_ROOT, 'ng2-md-datatable.js'),
     context: 'this',
     external: Object.keys(globals)
   }).then((bundle: { generate: any }) => {

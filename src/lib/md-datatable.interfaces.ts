@@ -1,5 +1,6 @@
-// Redux inspired interfaces
+import { DatatableSortType } from './md-datatable.enums';
 
+// Redux inspired interfaces
 export interface IDatatableAction {
   datatableId: string;
   type: string;
@@ -31,26 +32,3 @@ export interface IReduxDevToolsConnection {
 export interface IReduxDevToolsExtension {
   connect: (options: Object) => IReduxDevToolsConnection;
 };
-
-// public events
-export interface IDatatableSelectionEvent {
-  allRowsSelected: boolean;
-  selectedValues: string[];
-}
-
-export interface IDatatableSortEvent {
-  sortBy?: string;
-  sortType: DatatableSortType;
-}
-
-export interface IDatatablePaginationEvent {
-  page: number;
-  itemsPerPage: number;
-}
-
-// public enums
-export enum DatatableSortType {
-  None,
-  Ascending,
-  Descending
-}

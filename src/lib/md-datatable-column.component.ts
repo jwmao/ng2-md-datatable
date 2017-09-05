@@ -16,7 +16,8 @@ import 'rxjs/add/operator/takeUntil';
 import { BaseComponent } from './helpers';
 import { MdDataTableComponent } from './md-datatable.component';
 import { MdDataTableHeaderComponent } from './md-datatable-header.component';
-import { IDatatableSortEvent, DatatableSortType } from './md-datatable.interfaces';
+import { DatatableSortType } from './md-datatable.enums';
+import { IDatatableSortEvent } from './md-datatable.events';
 
 import { MdDatatableStore } from './md-datatable.store';
 import { getCurrentSort } from './md-datatable.reducer';

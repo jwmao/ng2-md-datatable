@@ -18,7 +18,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/skip';
 import 'rxjs/add/operator/takeUntil';
 
-import { IDatatableSelectionEvent, IDatatableSortEvent } from './md-datatable.interfaces';
+import { IDatatableSelectionEvent, IDatatableSortEvent } from './md-datatable.events';
 
 import { BaseComponent } from './helpers';
 import { MdDataTableHeaderComponent } from './md-datatable-header.component';

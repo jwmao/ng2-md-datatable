@@ -10,10 +10,14 @@ import {
   IDatatableState,
   IDatatableAction,
   IDatatableReducer,
-  DatatableSortType,
+} from './md-datatable.interfaces';
+
+import { DatatableSortType } from './md-datatable.enums';
+
+import {
   IDatatableSelectionEvent,
   IDatatableSortEvent,
-} from './md-datatable.interfaces';
+} from './md-datatable.events';
 
 import { MdDatatableActions } from './md-datatable.actions';
 
@@ -132,7 +136,7 @@ export function getDatatableState(datatableId: string): (state$: Observable<IDat
 /** @internal */
 export function areAllRowsSelected(datatableId: string): (state$: Observable<IDatatablesState>) => Observable<boolean> {
   return (state$: Observable<IDatatablesState>) => getDatatableState(datatableId)(state$)
-    .pluck('allRowsSelected')
+    .pluck<IDatatableState, boolean>('allRowsSelected')
     .distinctUntilChanged();
 }
 
